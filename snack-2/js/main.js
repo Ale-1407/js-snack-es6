@@ -33,3 +33,11 @@ let voti = students.filter( ( element ) => {
 });
 console.log(voti);
 
+// creo array degli studenti con voti > 70 e id > 120
+
+let votiId = students.filter( ( element ) => {
+    if( element.grades >= 70 && element.id >= 120){
+        return true;
+    }
+});
+console.log(votiId);
