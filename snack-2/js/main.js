@@ -24,3 +24,12 @@ let targhe = students.map( ( element ) => {
 });
 console.log(targhe);
 
+//creo array degli studenti con totale dei voti superiori a 70
+
+let voti = students.filter( ( element ) => {
+    if( element.grades >= 70){
+        return true;
+    }
+});
+console.log(voti);
+
