@@ -11,27 +11,42 @@ contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
 //array squadre
-
+let squadre2 = [];
 let squadre = [
     {
-        nome: Juventus,
+        nome: "Juventus",
         puntiFatti: 0,
         falliSubiti: 0
     },
     {
-        nome: Napoli,
+        nome: "Napoli",
         puntiFatti: 0,
         falliSubiti: 0
     },
     {
-        nome: Toro,
+        nome: "Toro",
         puntiFatti: 0,
         falliSubiti: 0
     },
     {
-        nome: Inter,
+        nome: "Inter",
         puntiFatti: 0,
         falliSubiti: 0
     }
 ];
+for(let i = 0; i < squadre.length; i++){
 
+    let punti = Math.floor(Math.random() * 11);
+    let falli = Math.floor(Math.random() * 11);
+    let { puntiFatti = punti, falliSubiti = falli } = squadre;
+
+    squadre[i] = {
+        ...squadre[i],
+        puntiFatti,
+        falliSubiti,
+    }
+
+    console.log(puntiFatti, falliSubiti);
+}
+
+console.log(squadre);
