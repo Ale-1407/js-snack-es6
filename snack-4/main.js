@@ -11,7 +11,7 @@ contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
 //array squadre
-let squadre2 = [];
+
 let squadre = [
     {
         nome: "Juventus",
@@ -34,19 +34,34 @@ let squadre = [
         falliSubiti: 0
     }
 ];
-for(let i = 0; i < squadre.length; i++){
+// for(let i = 0; i < squadre.length; i++){
 
-    let punti = Math.floor(Math.random() * 11);
-    let falli = Math.floor(Math.random() * 11);
-    let { puntiFatti = punti, falliSubiti = falli } = squadre;
+//     let punti = Math.floor(Math.random() * 11);
+//     let falli = Math.floor(Math.random() * 11);
+//     let { puntiFatti = punti, falliSubiti = falli } = squadre;
 
-    squadre[i] = {
-        ...squadre[i],
-        puntiFatti,
-        falliSubiti,
-    }
+//     squadre[i] = {
+//         ...squadre[i],
+//         puntiFatti,
+//         falliSubiti,
+//     }
 
-    console.log(puntiFatti, falliSubiti);
+//     console.log(puntiFatti, falliSubiti);
+// }
+
+// console.log(squadre);
+
+//altra soluzione
+
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log(squadre);
+const squadre2 = squadre.map( (element) => {
+    element.puntiFatti = randomNumber(1, 100);
+    element.falliSubiti = randomNumber(1, 100);
+    return element
+} );
+
+console.log( squadre2 )
+
